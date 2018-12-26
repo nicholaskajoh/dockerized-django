@@ -14,6 +14,6 @@ Sample project on how to dockerize your Django project in development and produc
 ## Production
 - Follow the first 2 steps outlined above
 - Run `docker-compose -f docker-compose.prod.yml up --build -d`
-- Run `docker-compose -f docker-compose.prod.yml run web python3 manage.py migrate`
-- Run `docker-compose -f docker-compose.prod.yml run web python3 manage.py collectstatic --noinput`
+- Run `docker-compose -f docker-compose.prod.yml run web python manage.py migrate`
+- Run `docker-compose -f docker-compose.prod.yml run web python manage.py collectstatic --noinput`
 - Visit website
