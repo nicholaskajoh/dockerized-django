@@ -5,7 +5,6 @@ services:
     restart: on-failure
     env_file:
       - ./.env
-      - ./.env.secret
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/www
@@ -15,9 +14,9 @@ services:
       - db
   db:
     image: "postgres:10.3-alpine"
-    restart: always
+    restart: unless-stopped
     env_file:
-      - ./.env.secret
+      - ./.env
     ports:
       - "5432:5432"
     volumes:

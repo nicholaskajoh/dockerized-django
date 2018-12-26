@@ -2,10 +2,9 @@ version: "3"
 services:
   web:
     build: .
-    restart: always
+    restart: on-failure
     env_file:
       - ./.env
-      - ./.env.secret
     command: gunicorn --bind 0.0.0.0:8080 dockerizeddjango.wsgi
     volumes:
       - .:/www
