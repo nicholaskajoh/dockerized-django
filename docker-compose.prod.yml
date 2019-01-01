@@ -6,8 +6,6 @@ services:
     env_file:
       - ./.env
     command: gunicorn --bind 0.0.0.0:8080 dockerizeddjango.wsgi
-    volumes:
-      - .:/www
     ports:
       - "8080:8080"
     depends_on:
